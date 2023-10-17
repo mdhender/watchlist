@@ -1,0 +1,9 @@
+*.css          text eol=lf
+*.go           text eol=lf
+*.gohtml       text eol=lf
+*.js           text eol=lf
+*.md           text eol=lf
+*.txt          text eol=lf
+.gitattributes text eol=lf
+.gitignore     text eol=lf
+LICENSE        text eol=lf
