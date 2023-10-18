@@ -1,0 +1,62 @@
+{{define "layout"}}{{- /*gotype:github.com/mdhender/watchlist.PagePayload*/ -}}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist</title>
+    <!--link rel="stylesheet" href="/fonts/inter-1.1.1.min.css" -->
+    <!--link rel="stylesheet" href="/css/new-1.1.2.min.css" -->
+    <link rel="stylesheet" href="/css/missing-1.1.1/missing.min.css">
+
+    <style>
+        * { outline: 1px solid rgba(255,0,0,.2); :hover { outline: 1px solid rgba(255,0,0,0.6); } }
+        * * { outline: 1px solid rgba(0,255,0,.2); :hover { outline: 1px solid rgba(0,255,0,0.6); } }
+        * * * { outline: 1px solid rgba(0,0,255,.2); :hover { outline: 1px solid rgba(0,0,255,0.6); } }
+        * * * * { outline: 1px solid rgba(255,0,255,.2); :hover { outline: 1px solid rgba(255,0,0,0.6); } }
+        * * * * * { outline: 1px solid rgba(0,255,255,.2); :hover { outline: 1px solid rgba(0,255,0,0.6); } }
+        * * * * * * { outline: 1px solid rgba(255,255,0,.2); :hover { outline: 1px solid rgba(0,0,255,0.6); } }
+        * * * * * * * { outline: 1px solid rgba(255,0,0,.2); :hover { outline: 1px solid rgba(255,0,0,0.6); } }
+        * * * * * * * * { outline: 1px solid rgba(0,255,0,.2); :hover { outline: 1px solid rgba(0,255,0,0.6); } }
+        * * * * * * * * * { outline: 1px solid rgba(0,0,255,.2); :hover { outline: 1px solid rgba(0,0,255,0.6); } }
+
+        .icon-cell {
+            align-content: center;
+            vertical-align: middle;
+        }
+        .icon-svg {
+            background-color: whitesmoke;
+            width: 24px;
+            height: 24px;
+            stroke-width: 1.25;
+        }
+    </style>
+
+    <script src="/js/htmx-1.9.6.min.js" crossorigin="anonymous"></script>
+    <script type="module" src="/css/missing-1.1.1/js/overflow-nav.js"></script>
+</head>
+<body hx-boost="true">
+{{- if .Flash -}}<script>alert("{{.Flash}}");</script>{{- end -}}
+<!-- header>
+    <h1>Watchlist</h1>
+    <nav>
+        <a href="/shows">Shows</a>
+    </nav>
+</header -->
+<header class="navbar" data-overflow-nav>
+    <button class="iconbutton" data-nav-expander aria-hidden>&#x2630;<!-- trigram for heaven --></button>
+    <!-- rest of navbar... -->
+    <a href="/shows">Shows</a>
+    <a href="/settings">Settings</a>
+    <a href="/help">Help</a>
+    <a href="/reload">Reload</a>
+</header>
+<main>
+{{template "content" .Content}}
+</main>
+<hr/>
+<footer>
+    Watchlist Version 0.1.0
+</footer>
+</body>
+</html>
+{{end}}

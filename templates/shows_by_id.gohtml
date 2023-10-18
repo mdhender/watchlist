@@ -1,0 +1,16 @@
+{{define "content"}}{{- /*gotype:github.com/mdhender/watchlist.ShowPayload*/ -}}
+<h1>{{.Title}}</h1>
+<div>
+    <div>Year: {{.Year}}</div>
+    <div>Kind: {{.KindOf}}</div>
+    <div>Genre: {{.Genre}}</div>
+    <div>IMDB: {{if .ImdbUrl}}<a href="{{.ImdbUrl}}" target="_blank">{{.ImdbUrl}}</a>{{end}}</div>
+</div>
+
+<button hx-delete="/shows/{{.Id}}" hx-target="body">Delete Show</button>
+
+<footer>
+    <a href="/shows/{{.Id}}/edit">Edit</a>
+    <a href="/shows">Back</a>
+</footer>
+{{end}}

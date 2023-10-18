@@ -1,0 +1,35 @@
+{{define "table-shows"}}{{- /*gotype:github.com/mdhender/watchlist.ShowPayload*/ -}}
+<table id="table-shows">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Kind</th>
+        <th>Genre</th>
+        <th></th>
+        <th>IMDB</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .}}
+        <tr>
+            <td>{{ .Title }}</td>
+            <td>{{if .Year}}{{.Year}}{{end}}</td>
+            <td>{{.KindOf}}</td>
+            <td>{{.Genre}}</td>
+            <td>
+                <a href="/shows/{{ .Id }}/edit">Edit</a>
+                <a href="/shows/{{ .Id }}">View</a>
+            </td>
+            <td>
+                {{if .ImdbUrl}}
+                    <a href="{{.ImdbUrl}}" target="_blank">
+                        <img src="/img/external-link.svg" class="icon-svg" alt="external link"/>
+                    </a>
+                {{end}}
+            </td>
+        </tr>
+    {{end}}
+    </tbody>
+</table>
+{{end}}

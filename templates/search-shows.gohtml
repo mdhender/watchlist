@@ -1,0 +1,7 @@
+{{define "search-shows"}}
+<search>
+    <label for="search">Search List</label>
+    <input id="search" name="q" type="search" placeholder="Search List" value="{{.}}">
+    <button hx-get="/search" hx-target="#table-shows" hx-include="#search">Search</button>
+</search>
+{{end}}

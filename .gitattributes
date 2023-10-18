@@ -3,6 +3,7 @@
 *.gohtml       text eol=lf
 *.js           text eol=lf
 *.md           text eol=lf
+*.svg          text eol=lf
 *.txt          text eol=lf
 .gitattributes text eol=lf
 .gitignore     text eol=lf
